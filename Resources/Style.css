@@ -1,0 +1,223 @@
+/*Universal*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+}
+html {
+    font-size: 10px;
+}
+img {
+    border-radius: 3rem;
+}
+/*Header*/
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    padding: 1%;
+    background-color: white;
+}
+@media only screen and (max-width: 700px) {
+    header {
+        z-index: 1;
+    }
+}
+#desktop {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+#desktop a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-left: 2%;
+    color: black;
+    font-weight: 700;
+    align-self: center;
+    border: 1px solid rgb(148, 147, 147);
+    padding: 0.5%;
+}
+#mobile {
+    display: none;;
+}
+@media only screen and (max-width: 700px) {
+    #desktop {
+        justify-content: space-around;
+    }
+    #desktop a {
+        margin: 0;
+    }
+}
+/*Main*/
+main {
+    margin: 6rem 1% 0 1%;
+    display: grid;
+    grid-template: repeat(3, 15rem) repeat(8, minmax(10rem, auto)) / 1fr 1fr;
+    grid-gap: 1rem 2rem;
+    grid-template-areas:
+        "banner banner"
+        "banner banner"
+        "banner banner"
+        "left right"
+        "left right"
+        "left right"
+        "left right"
+        "left right"
+        "left quote"
+        "left footer"
+        "left footer"
+}
+@media only screen and (max-width: 700px) {
+    main {
+        grid-template: repeat(3, 15rem) repeat(3, minmax(10rem, auto)) / 1fr 1fr 1fr;
+        grid-gap: 0.5rem 1rem;
+        grid-template-areas:
+            "banner banner banner"
+            "banner banner banner"
+            "banner banner banner"
+            "left left left"
+            "left left left"
+            "right quote footer";
+    }
+}
+@media only screen and (max-width: 500px) {
+    main {
+        grid-template: repeat(3, 15rem) repeat(5, minmax(10rem, auto)) / 1fr;
+        grid-gap: 0.5rem 1rem;
+        grid-template-areas:
+            "banner"
+            "banner"
+            "banner"
+            "left"
+            "left"
+            "right"
+            "quote"
+            "footer";
+    }
+}
+/*Banner*/
+.second {
+    display: none;
+}
+#banner {
+    grid-area: banner;
+    background-image: url(./Images/kristian-egelund-wmdcUQ0CJ4c-unsplash.jpg);
+    background-size: cover;
+    margin-bottom: 0;
+    border-radius: 5rem;
+}
+#banner h1 {
+    min-width: fit-content;
+    font-size: 4rem;
+    opacity: 0.6;
+    margin: 3% 0 0 5%;
+    font-style: italic;
+}
+@media only screen and (max-width: 1050px) {
+    #first {
+        display: none;
+    }
+    .second {
+        display: flex;
+        line-height: 1rem;
+    }
+    #first-half{
+        justify-content: flex-start;
+        width: 200px;
+    }
+    #second-half {
+        justify-content: flex-end;
+        width: 300px;
+    }
+    #banner {
+        padding-top: 7%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .second {
+        line-height: 1.5rem;
+    }
+}
+/*Article*/
+#left {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 2rem;
+    padding-top: 3%;
+    height: 100%;
+}
+#left h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+#left p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 1% auto;;
+    text-align: center;
+}
+#left img {
+    margin: 1%;
+    max-width: 98%;
+    margin-top: 3%;
+}
+#right {
+    grid-area: right;
+    height: 100%;
+}
+#right img {
+    width: 100%;
+    height: 100%;
+}
+/*Aside*/
+aside {
+    grid-area: quote;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+}
+aside h2 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    font-size: 2.5vw;
+}
+@media only screen and (max-width: 700px) {
+    aside h2 {
+        font-size: 3.5vw;
+    }
+}
+@media only screen and (max-width: 500px) {
+    aside h2 {
+        font-size: 5vw
+    }
+}
+/*Footer*/
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./Images/afiq-fatah-1cVmsgAkm9A-unsplash.jpg);
+    background-size: cover;
+    border-radius: 3rem;
+    margin-bottom: 1%;
+}
+footer p {
+    text-align: center;
+    font-size: 3rem;
+    color:white;
+}
+@media only screen and (max-width: 500px) {
+    footer {
+        height: 30rem;
+    }
+}
